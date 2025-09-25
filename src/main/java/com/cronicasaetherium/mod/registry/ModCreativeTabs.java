@@ -60,6 +60,10 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.AETHERIUM_ORE_ITEM.get());
                 output.accept(ModBlocks.DEEPSLATE_AETHERIUM_ORE_ITEM.get());
                 output.accept(ModBlocks.AETHERIUM_BLOCK_ITEM.get());
+                
+                // Itens da dimensão
+                output.accept(ModItems.UNSTABLE_HEART.get());
+                output.accept(ModBlocks.ARCANE_PORTAL_FRAME_ITEM.get());
             })
             .build());
     
@@ -84,6 +88,9 @@ public class ModCreativeTabs {
                 // Máquinas
                 output.accept(ModBlocks.AETHERIUM_FORGE_ITEM.get());
                 output.accept(ModBlocks.CRYSTAL_MILL_ITEM.get());
+                
+                // Máquinas de sinergia
+                output.accept(ModBlocks.MANA_INFUSER_ITEM.get());
             })
             .build());
     
@@ -104,10 +111,20 @@ public class ModCreativeTabs {
                 // Materiais mágicos
                 output.accept(ModItems.MAGIC_ESSENCE.get());
                 
+                // Itens de sinergia
+                output.accept(ModItems.RUNE_OF_EFFICIENCY.get());
+                
                 // Blocos mágicos
                 output.accept(ModBlocks.MAGIC_ALTAR_ITEM.get());
                 output.accept(ModBlocks.MANA_CRYSTAL_ITEM.get());
                 output.accept(ModBlocks.AETHERIUM_FLOWER_ITEM.get());
+                
+                // Blocos da dimensão
+                output.accept(ModBlocks.CRYSTALLIZED_SOIL_ITEM.get());
+                output.accept(ModBlocks.DIMENSIONAL_AETHERIUM_ORE_ITEM.get());
+                
+                // Itens de lore
+                output.accept(ModItems.WORN_JOURNAL.get());
             })
             .build());
     

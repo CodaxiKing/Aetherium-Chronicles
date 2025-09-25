@@ -12,11 +12,15 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
 import com.cronicasaetherium.mod.registry.ModItems;
 import com.cronicasaetherium.mod.registry.ModBlocks;
 import com.cronicasaetherium.mod.registry.ModEntities;
 import com.cronicasaetherium.mod.registry.ModCreativeTabs;
+import com.cronicasaetherium.mod.registry.ModBlockEntities;
+import com.cronicasaetherium.mod.common.commands.ProficiencyCommand;
+import com.cronicasaetherium.mod.config.ModConfig;
 
 /**
  * Classe principal do mod Crônicas de Aetherium
@@ -51,14 +55,18 @@ public class CronicasAetherium {
         // Registra todos os sistemas do mod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModEntities.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
         
         // Registra o event bus principal do NeoForge
         NeoForge.EVENT_BUS.register(this);
         
-        // Registra configurações do mod se necessário
-        // modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        // Registra o evento de comandos
+        NeoForge.EVENT_BUS.addListener(this::onRegisterCommands);
+        
+        // Registra configurações do mod
+        modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, ModConfig.SPEC);
         
         LOGGER.info("Crônicas de Aetherium inicializado com sucesso!");
     }
@@ -119,5 +127,16 @@ public class CronicasAetherium {
             
             LOGGER.info("Configuração do cliente concluída");
         }
+    }
+    
+    /**
+     * Evento de registro de comandos
+     * Registra todos os comandos customizados do mod
+     * 
+     * @param event Evento de registro de comandos
+     */
+    public void onRegisterCommands(RegisterCommandsEvent event) {
+        ProficiencyCommand.register(event.getDispatcher());
+        LOGGER.info("Comandos do Crônicas de Aetherium registrados");
     }
 }

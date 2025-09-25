@@ -7,6 +7,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.util.valueproviders.UniformInt;
+import com.cronicasaetherium.mod.blocks.synergy.ManaInfuserBlock;
+import com.cronicasaetherium.mod.blocks.synergy.ArcanePortalBlock;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -140,6 +146,85 @@ public class ModBlocks {
             .lightLevel(state -> 5)));
     
     // ================================
+    // BLOCOS DA DIMENSÃO CRISOL ARCANO
+    // ================================
+    
+    /**
+     * Estrutura do Portal Arcano - Bloco que forma a moldura do portal
+     * Este bloco é usado para construir a estrutura que será ativada pelo Coração Instável
+     * Tem propriedades especiais para indicar sua função como portal dimensional
+     */
+    public static final Supplier<Block> ARCANE_PORTAL_FRAME = BLOCKS.register("arcane_portal_frame", 
+        () -> new Block(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_PURPLE)
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .requiresCorrectToolForDrops()
+            .strength(50.0F, 1200.0F) // Resistente como obsidiana
+            .sound(SoundType.STONE)
+            .lightLevel(state -> 8) // Brilho sutil
+            .emissiveRendering((state, level, pos) -> true)));
+    
+    /**
+     * Terra Cristalizada - Bloco base da dimensão Crisol Arcano
+     * Substitui a terra comum na nova dimensão, com propriedades cristalinas
+     * Pode ser minerada e usada como material de construção especial
+     */
+    public static final Supplier<Block> CRYSTALLIZED_SOIL = BLOCKS.register("crystallized_soil", 
+        () -> new Block(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_LIGHT_BLUE)
+            .instrument(NoteBlockInstrument.SNARE)
+            .strength(2.0F, 6.0F) // Mais resistente que terra comum
+            .sound(SoundType.GRAVEL) // Som cristalino
+            .lightLevel(state -> 2))); // Brilho muito suave
+    
+    /**
+     * Minério de Aetherium da Dimensão - Versão exclusiva do Crisol Arcano
+     * Contém mais cristais que a versão do mundo normal
+     * Só pode ser encontrado na dimensão especial
+     */
+    public static final Supplier<Block> DIMENSIONAL_AETHERIUM_ORE = BLOCKS.register("dimensional_aetherium_ore", 
+        () -> new DropExperienceBlock(UniformInt.of(3, 7), BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_CYAN)
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .requiresCorrectToolForDrops()
+            .strength(4.0F, 3.0F) // Mais fácil de quebrar que obsidiana
+            .sound(SoundType.STONE)
+            .lightLevel(state -> 12))); // Mais brilhante que o normal
+    
+    // ================================
+    // BLOCOS DE SINERGIA (TECNOLOGIA + MAGIA)
+    // ================================
+    
+    /**
+     * Infusora de Mana - Máquina de sinergia Tecnologia → Magia
+     * Converte energia tecnológica em mana utilizável pelo sistema mágico
+     * Interface entre os dois sistemas de progressão
+     */
+    public static final Supplier<Block> MANA_INFUSER = BLOCKS.register("mana_infuser", 
+        () -> new ManaInfuserBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_PURPLE)
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .requiresCorrectToolForDrops()
+            .strength(5.0F, 6.0F)
+            .sound(SoundType.METAL)
+            .lightLevel(state -> 6)
+            .emissiveRendering((state, level, pos) -> true)));
+    
+    /**
+     * Portal Arcano Ativo - Bloco de teleportação para o Crisol Arcano
+     * Criado quando a estrutura do portal é ativada com Coração Instável
+     * Permite viagem bidirecional entre dimensões
+     */
+    public static final Supplier<Block> ARCANE_PORTAL = BLOCKS.register("arcane_portal", 
+        () -> new ArcanePortalBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_PURPLE)
+            .strength(-1.0F, 3600000.0F) // Indestrutível como portal do Nether
+            .sound(SoundType.GLASS)
+            .lightLevel(state -> 15) // Brilho máximo
+            .emissiveRendering((state, level, pos) -> true)
+            .noCollission()));
+    
+    // ================================
     // REGISTRO DE BLOCKITEMS
     // ================================
     
@@ -170,6 +255,22 @@ public class ModBlocks {
     
     public static final Supplier<Item> AETHERIUM_FLOWER_ITEM = ModItems.ITEMS.register("aetherium_flower",
         () -> new BlockItem(AETHERIUM_FLOWER.get(), new Item.Properties()));
+    
+    // BlockItems para blocos da dimensão
+    public static final Supplier<Item> ARCANE_PORTAL_FRAME_ITEM = ModItems.ITEMS.register("arcane_portal_frame",
+        () -> new BlockItem(ARCANE_PORTAL_FRAME.get(), new Item.Properties()));
+    
+    public static final Supplier<Item> CRYSTALLIZED_SOIL_ITEM = ModItems.ITEMS.register("crystallized_soil",
+        () -> new BlockItem(CRYSTALLIZED_SOIL.get(), new Item.Properties()));
+    
+    public static final Supplier<Item> DIMENSIONAL_AETHERIUM_ORE_ITEM = ModItems.ITEMS.register("dimensional_aetherium_ore",
+        () -> new BlockItem(DIMENSIONAL_AETHERIUM_ORE.get(), new Item.Properties()));
+    
+    // BlockItems para blocos de sinergia
+    public static final Supplier<Item> MANA_INFUSER_ITEM = ModItems.ITEMS.register("mana_infuser",
+        () -> new BlockItem(MANA_INFUSER.get(), new Item.Properties()));
+    
+    // Portal arcano não precisa de BlockItem (criado dinamicamente)
     
     /**
      * Método de registro que deve ser chamado na inicialização do mod

@@ -1,0 +1,98 @@
+Fase 2 - Expansão de Sistemas e Imersão
+Objetivo: Com base no projeto "Crônicas de Aetherium" já estruturado, este prompt detalha a implementação de novos sistemas de progressão, imersão, sinergia e configuração. O foco é criar a estrutura funcional desses sistemas, que serão preenchidos com conteúdo em fases futuras.
+
+Lembrete: Continue a usar a estrutura de pacotes já definida e comente todo o novo código em português.
+
+Módulo 1: Sistema de Proficiência (Árvore de Habilidades)
+Tarefa: Implemente o backend para um sistema de habilidades que fica atrelado ao jogador.
+
+Capacidade do Jogador (Player Capability):
+
+Use o sistema de ICapabilityProvider do NeoForge para anexar dados customizados à entidade do jogador.
+
+Crie uma capacidade chamada PlayerProficiency que armazene dois valores: engenharia_xp e arcana_xp.
+
+Faça com que esses dados persistam quando o jogador morrer ou viajar entre dimensões.
+
+Comandos de Teste:
+
+Crie comandos de administrador para facilitar os testes:
+
+/proficiency get <jogador> <tipo> (onde tipo é engenharia ou arcana) - Para visualizar a XP atual.
+
+/proficiency add <jogador> <tipo> <quantidade> - Para adicionar XP a uma proficiência.
+
+Estrutura de Pacotes:
+
+Crie um novo pacote com.seunome.aetheriumchronicles.common.capability para abrigar esse código.
+
+Módulo 2: A Nova Dimensão - "O Crisol Arcano"
+Tarefa: Crie a fundação para uma nova dimensão, incluindo seu portal, um bioma básico e um novo minério.
+
+Bloco do Portal:
+
+Crie um novo bloco chamado Estrutura do Portal Arcano (arcane_portal_frame). Ele deve ter uma aparência única, indicando que é parte de uma estrutura maior.
+
+Ativador do Portal:
+
+Crie um novo item chamado Coração Instável (unstable_heart).
+
+Lógica: Quando o jogador clicar com o botão direito em um bloco de Estrutura do Portal Arcano segurando o Coração Instável, o portal para a nova dimensão deve ser ativado. (A forma do portal pode ser um simples quadrado de 3x3 para começar).
+
+Registro da Dimensão:
+
+Registre a nova dimensão com o ID aetheriumchronicles:arcane_crucible.
+
+Ambiente e Bioma:
+
+Crie um bioma básico para a dimensão chamado Estepes Cristalinas (crystalline_wastes).
+
+O bioma deve ter um novo bloco como "terra" principal, chamado Terra Cristalizada (crystallized_soil).
+
+Adicione um efeito de partícula ambiente (ex: pequenas faíscas de energia flutuando) para dar uma atmosfera única.
+
+Recursos da Dimensão:
+
+Adicione um novo Minério de Aetherium (aetherium_ore) que só pode ser encontrado nesta dimensão, embutido na Terra Cristalizada.
+
+Módulo 3: Framework de Sinergia (Tecnologia e Magia)
+Tarefa: Crie os blocos e itens iniciais que irão conectar os sistemas de tecnologia e magia, mesmo que a lógica completa ainda não seja implementada.
+
+Máquina "Infusora de Mana": (Tecnologia -> Magia)
+
+Crie um Block e um BlockEntity para a "Infusora de Mana" (mana_infuser).
+
+Crie uma interface gráfica (GUI) simples para ela com:
+
+Um slot de entrada para um item (ex: uma flor ou catalisador).
+
+Um slot de saída para o produto.
+
+Uma barra para armazenar energia (Forge Energy / FE).
+
+Lógica (Placeholder): Deixe um comentário // TODO: Implementar lógica de geração de Mana quando o sistema de Magia for adicionado. no tick() do BlockEntity.
+
+Item "Runa de Eficiência": (Magia -> Tecnologia)
+
+Crie um novo Item chamado "Runa de Eficiência" (rune_of_efficiency).
+
+Lógica (Placeholder): Implemente a lógica onItemUse. Ao ser usada em um bloco que seja uma máquina (que tenha um BlockEntity), a runa deve ser consumida e aplicar um efeito visual de brilho no bloco. Deixe um comentário // TODO: Implementar o bônus de eficiência real quando o sistema de Máquinas for adicionado.
+
+Módulo 4: Configuração e Lore
+Arquivo de Configuração:
+
+Crie um arquivo de configuração do lado do servidor (server-config.toml) usando o sistema do NeoForge.
+
+Adicione as primeiras opções configuráveis:
+
+Um multiplicador para o ganho de XP de proficiência (proficiencyXpMultiplier).
+
+Uma opção booleana para habilitar/desabilitar a dimensão do Crisol Arcano (isArcaneCrucibleEnabled).
+
+A chance de spawn do Minério de Aetherium (aetheriumOreSpawnChance).
+
+Item de Lore:
+
+Crie um novo item: Diário Desgastado (worn_journal).
+
+Quando o jogador clicar com o botão direito, ele deve abrir uma interface simples com um texto de exemplo, introduzindo a lore do mod. Ex: "Fragmento 1: ...o mundo rachou, e de suas veias cristalinas, uma nova energia emergiu...".

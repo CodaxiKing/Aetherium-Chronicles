@@ -3,8 +3,12 @@ package com.cronicasaetherium.mod.registry;
 import com.cronicasaetherium.mod.CronicasAetherium;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import com.cronicasaetherium.mod.items.synergy.RuneOfEfficiencyItem;
+import com.cronicasaetherium.mod.items.lore.WornJournalItem;
+import com.cronicasaetherium.mod.items.dimension.UnstableHeartItem;
 
 import java.util.function.Supplier;
 
@@ -104,6 +108,32 @@ public class ModItems {
         () -> new Item(new Item.Properties().stacksTo(1)));
     
     // ================================
+    // ITENS DA DIMENSÃO CRISOL ARCANO
+    // ================================
+    
+    /**
+     * Coração Instável - Ativador do portal para a dimensão Crisol Arcano
+     * Item raro usado para ativar a estrutura do portal arcano
+     * Consumido durante a ativação do portal
+     */
+    public static final Supplier<Item> UNSTABLE_HEART = ITEMS.register("unstable_heart",
+        () -> new UnstableHeartItem(new Item.Properties().stacksTo(1)));
+    
+    // ================================
+    // ITENS DE SINERGIA (TECNOLOGIA + MAGIA)
+    // ================================
+    
+    /**
+     * Runa de Eficiência - Item de sinergia Magia → Tecnologia
+     * Aplicada em máquinas para conceder bônus de eficiência
+     * Consome o item ao usar, efeito permanente na máquina
+     */
+    public static final Supplier<Item> RUNE_OF_EFFICIENCY = ITEMS.register("rune_of_efficiency",
+        () -> new RuneOfEfficiencyItem(new Item.Properties()
+            .stacksTo(16)
+            .rarity(Rarity.UNCOMMON)));
+    
+    // ================================
     // LIVROS E GUIAS
     // ================================
     
@@ -114,6 +144,16 @@ public class ModItems {
      */
     public static final Supplier<Item> CHRONICLES_TOME = ITEMS.register("chronicles_tome",
         () -> new Item(new Item.Properties().stacksTo(1)));
+    
+    /**
+     * Diário Desgastado - Item de lore introdutório
+     * Contém fragmentos da história e lore do mod
+     * Abre interface com textos introdutórios quando usado
+     */
+    public static final Supplier<Item> WORN_JOURNAL = ITEMS.register("worn_journal",
+        () -> new WornJournalItem(new Item.Properties()
+            .stacksTo(1)
+            .rarity(Rarity.UNCOMMON)));
     
     /**
      * Método de registro que deve ser chamado na inicialização do mod
