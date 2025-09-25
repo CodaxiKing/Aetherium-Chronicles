@@ -1,0 +1,85 @@
+É hora de introduzir novos materiais e desafios que exigem que o jogador use o que aprendeu no Tier 1 para progredir.
+
+Tecnologia Avançada (Tier 2):
+
+Novas Fontes de Energia: Saia do carvão.
+
+Gerador Geotérmico: Uma máquina que deve ser colocada perto de fontes de lava para gerar FE passivamente, recompensando a exploração de cavernas.
+
+Painéis Solares: Uma fonte de energia limpa e passiva, mas que só funciona durante o dia e é menos eficaz durante a chuva.
+
+Automação Inicial: Introduza a logística.
+
+Esteiras Transportadoras: Blocos que movem itens e mobs lentamente de um ponto a outro.
+
+Braço Mecânico: Um bloco que pode pegar itens de um inventário (baú, máquina) e colocá-los em outro ou sobre uma esteira.
+
+Novos Metais e Ligas:
+
+Introduza um novo minério, "Cobalto", encontrado em veios raros no subsolo.
+
+Crie uma nova máquina, a "Fundidora de Ligas", que combina Ferro + Cobalto + FE para criar "Aço Reforçado", o material principal para as máquinas de Tier 2.
+
+Magia Intermediária (Tier 2):
+
+Rituais Mágicos: Crie um sistema mais envolvente que o crafting comum.
+
+Altar Arcano: Um bloco central.
+
+Pedestais Rúnicos: Blocos que devem ser colocados ao redor do Altar.
+
+Como funciona: O jogador coloca um item central no Altar e ingredientes nos Pedestais. Ao ativar o Altar com a Varinha da Floresta, um ritual começa (com efeitos visuais), consumindo os itens e Mana da Piscina de Mana próxima para criar um novo item poderoso.
+
+Novas Fontes de Mana:
+
+Rosa Térmica: Uma flor que gera Mana rapidamente quando exposta ao calor (fogo, lava).
+
+Cogumelo Lunar: Um cogumelo que só cresce no escuro e gera uma grande quantidade de Mana durante a noite.
+
+Magia Funcional:
+
+Feitiço de Magnetismo: Um feitiço de baixo custo que puxa itens próximos para o jogador.
+
+Selo de Repulsão: Um bloco mágico que empurra mobs hostis para longe quando recebe Mana.
+
+Exploração e Desafios (Tier 2):
+
+Primeiro Mini-Boss: Crie o Colosso de Rocha, um elemental gigante encontrado no fundo das cavernas. Ele é imune a flechas e lento, mas seus ataques corpo a corpo são devastadores. Derrotá-lo dropa um "Coração de Adamantina", necessário para os rituais e máquinas mais avançadas.
+
+Dungeons: Crie uma nova estrutura subterrânea: a "Fábrica Abandonada". É um dungeon com múltiplos corredores, spawners de Golems de Pedra Instável, quebra-cabeças simples envolvendo as novas esteiras, e uma sala de controle final com um baú de recompensa contendo um esquema para uma máquina avançada.
+
+Módulo 2: Sistemas de Mundo Dinâmico e Reativo
+Faça o mundo parecer menos estático e mais vivo, reagindo ao jogador e ao tempo.
+
+Eventos Mundiais:
+
+Aurora Mágica: Um evento noturno raro. O céu fica coberto por uma aurora colorida, durante a qual a geração de Mana é duplicada e mobs mágicos (a serem criados) têm chance de aparecer.
+
+Terremotos Leves: Um evento aleatório que ocorre no subsolo. A tela treme, sons de pedra quebrando são ouvidos, e há uma pequena chance de novos veios de minério (como o Cobalto) serem expostos perto do jogador.
+
+Aprofundamento das Facções:
+
+Sistema de Reputação: Agora que o jogador já conheceu as facções, implemente um sistema de reputação numérico.
+
+Ganhando Reputação: Complete missões para a facção, ou troque itens valiosos com seus NPCs.
+
+Perdendo Reputação: Ataque membros da facção.
+
+Recompensas: Conforme a reputação aumenta (Ex: Neutro -> Amigável -> Honrado), os NPCs da facção oferecem trocas melhores e mais raras. Se a reputação ficar negativa (Hostil), eles atacarão o jogador assim que o virem.
+
+Módulo 3: Equipamentos Híbridos (Sinergia Real)
+Este é o ponto crucial para unir os pilares do seu mod. Crie equipamentos que exigem progresso tanto em tecnologia quanto em magia.
+
+Armaduras e Ferramentas Especializadas:
+
+Tecnológica: Crie uma "Picareta a Vapor" feita com Aço Reforçado que consome carvão e FE (de uma bateria interna) para minerar em uma área de 3x3.
+
+Mágica: Crie um "Anel de Regeneração" que consome Mana do inventário do jogador (se houver um item de armazenamento de Mana) para regenerar vida lentamente.
+
+Equipamentos Híbridos (A verdadeira sinergia):
+
+Peitoral Tecnomágico: Fabricado com Aço Reforçado, "Essência Mágica" (criada em um ritual) e um Coração de Adamantina (do mini-boss).
+
+Função: Possui uma barra de energia FE e uma de Mana. Ele pode absorver uma parte do dano recebido consumindo FE. Além disso, o jogador pode ativar uma habilidade (com uma tecla) que consome Mana para criar um escudo de energia temporário que reflete projéteis.
+
+Adicionando essas camadas, você cria um ciclo de jogo recompensador: o jogador explora para encontrar materiais (Tier 2), o que lhe permite construir novas máquinas e magias, que por sua vez o preparam para enfrentar desafios maiores (mini-boss, dungeons), cujas recompensas desbloqueiam equipamentos híbridos ainda mais poderosos.

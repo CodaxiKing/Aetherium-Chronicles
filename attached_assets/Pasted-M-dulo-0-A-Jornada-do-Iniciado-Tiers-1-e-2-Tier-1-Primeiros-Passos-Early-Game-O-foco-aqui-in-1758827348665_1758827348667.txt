@@ -1,0 +1,98 @@
+Módulo 0: A Jornada do Iniciado (Tiers 1 e 2)
+Tier 1: Primeiros Passos (Early Game)
+O foco aqui é introduzir as mecânicas básicas e os novos recursos do mod sem sobrecarregar o jogador, seja pela via da engenharia ou do ocultismo.
+
+Tecnologia: A Revolução a Vapor
+
+Recursos Iniciais: Cobre e Estanho são minérios comuns no subsolo, e a primeira liga metálica a ser criada é o Bronze.
+
+Ferramenta Essencial: A Chave de Calibração, uma chave inglesa usada para rotacionar e configurar máquinas.
+
+Poder Inicial: O Motor a Vapor: O coração do Tier 1. Uma máquina que queima combustível sólido (carvão, madeira) e requer um suprimento constante de água para gerar energia (FE).
+
+Logística de Fluidos:
+
+Bomba Manual: Uma bomba simples que puxa água de uma fonte quando clicada.
+
+Canos de Bronze: Usados para transportar água da bomba para o Motor a Vapor.
+
+Suíte de Máquinas de Bronze:
+
+Triturador Mecânico: Transforma 1 minério em 2 pós, duplicando o rendimento.
+
+Prensa de Engrenagens: Transforma lingotes em engrenagens e placas, componentes essenciais.
+
+Fornalha a Bronze: Uma fornalha que queima um pouco mais rápido e eficientemente que a de pedra.
+
+Primeira Automação:
+
+Dutos Pneumáticos: Tubos simples e lentos que movem itens, permitindo a primeira linha de produção automatizada.
+
+Magia: O Despertar do Ocultista
+
+Recursos Iniciais:
+
+Bosques Sombrios: Um novo bioma onde crescem os Salgueiros Torcidos, fonte da primeira madeira mágica.
+
+Fragmentos de Alma: Um novo mineral encontrado no subsolo, que pulsa com uma luz fraca.
+
+O Guia: O Códice Escondido: Criado com um livro e um Fragmento de Alma, este livro será seu guia, revelando novos conhecimentos à medida que você progride.
+
+Mecânica Central - Colheita de Espíritos:
+
+Faca de Sacrifício: Uma lâmina rústica. Mobs mortos por esta faca têm a chance de dropar Essência Espiritual, o combustível básico para toda a magia.
+
+Primeira "Mesa de Trabalho": A Pedra Rúnica: Um único bloco que, ao consumir Essência Espiritual, realiza transmutações simples com itens jogados sobre ela.
+
+Primeiros Amuletos (Trinkets):
+
+Amuleto de Penumbra: Reduz o alcance de detecção de monstros na escuridão.
+
+Anel de Caçador: Faz com que inimigos atingidos brilhem através das paredes por um curto período.
+
+Tier 2: Expansão e Automação (Mid Game)
+O jogador já entendeu o básico. Agora é hora de expandir suas capacidades, automatizar processos e se preparar para os desafios maiores.
+
+Tecnologia: A Era do Aço e da Automação
+
+Material Chave: O Aço Reforçado: O portal para o Tier 2, criado em uma estrutura específica.
+
+Estrutura Essencial: O Alto-Forno Industrial: Uma estrutura multi-bloco (ex: 3x3x4) que consome muito mais energia para transformar ferro e pó de carvão em lingotes de Aço Reforçado.
+
+Processamento Avançado:
+
+Montador Automatizado: A mesa de trabalho programável para fabricação em massa.
+
+Enriquecedor Químico: Uma máquina que usa catalisadores para refinar pós de minério, aumentando ainda mais o rendimento.
+
+Automação de Recursos:
+
+Mineradora de Perfil: O primeiro tipo de "quarry". Uma máquina cara que cava lentamente um buraco vertical (um chunk), coletando todos os recursos.
+
+Sistema de Aprimoramentos:
+
+Circuitos de Aprimoramento: Módulos fabricáveis (Velocidade, Eficiência Energética, Sorte/Fortuna) que podem ser instalados nas máquinas de Tier 2 para otimizar a produção.
+
+Magia: Pactos e Rituais de Infusão
+
+Gerenciamento de Espíritos: O jogador aprende a diferenciar e coletar espíritos mais potentes.
+
+Tipos de Espírito: Mobs hostis dropam Espíritos Malignos; mobs passivos, Espíritos Puros; e mobs arcanos, Espíritos Arcanos.
+
+Bolsas de Espírito: Itens para armazenar e separar os diferentes tipos de espíritos colhidos.
+
+Estrutura Central: O Altar de Infusão: A evolução da Pedra Rúnica. Uma estrutura multi-bloco com um Altar Central e Pedestais de Salgueiro. A criação de itens consome tipos e quantidades específicas de espíritos.
+
+Novas Mecânicas:
+
+Infusão Espiritual: Use o Altar para encantar permanentemente ferramentas com efeitos únicos, como roubo de vida (Espíritos Malignos) ou velocidade (Espíritos Puros).
+
+Criação de Artefatos: O Altar é usado para criar itens mágicos complexos, como totens, cajados e o Núcleo Anímico (o item de Tier 3 para criar golens).
+
+Rituais Funcionais:
+
+Ritual do Sussurro Espectral: Consome Espíritos Arcanos para revelar todos os seres vivos em uma grande área.
+
+Ritual da Colheita Sombria: Corrompe a terra para aumentar o nascimento de monstros hostis, facilitando a colheita de Espíritos Malignos.
+
+Com essa base, a transição para o seu "Módulo 1: Apogeu do Conhecimento" se torna uma progressão natural e gratificante. O jogador terá que dominar o Alto-Forno Industrial e a Mineradora de Perfil para obter os recursos para o Reator de Fusão Estelar, e terá que se tornar um mestre na colheita de espíritos e nos rituais do Altar de Infusão para desvendar os segredos do Altar do Arcanista e da criação de Golens.

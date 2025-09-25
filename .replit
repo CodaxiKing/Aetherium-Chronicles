@@ -1,4 +1,4 @@
-modules = ["java"]
+modules = ["java", "java-graalvm22.3"]
 [agent]
 expertMode = true
 
@@ -16,15 +16,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Minecraft Client"
+args = "Compile Code"
 
 [[workflows.workflow]]
-name = "Minecraft Client"
+name = "Compile Code"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "./gradlew runClient"
+args = "./gradlew compileJava --no-daemon"
 
 [workflows.workflow.metadata]
 outputType = "console"

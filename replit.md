@@ -14,14 +14,51 @@ Projeto de mod para Minecraft 1.21.1 usando NeoForge que implementa três sistem
 - **Localização:** Arquivos de linguagem em português e inglês
 - **Documentação:** README.md completo com instruções detalhadas de setup
 
-### 🔧 Em Progresso
-- **Correções críticas:** Fixes para problemas de build identificados pelo architect
-- **Workflow de desenvolvimento:** Configuração do ambiente de execução
+### ✅ Setup Replit Concluído
+- **Ambiente Java:** Java 21 instalado e configurado
+- **Build System:** Gradle 8.8 com NeoForge 21.1.57 (configuração correta)
+- **Projeto estruturado:** Todos os arquivos fonte e configurações prontos
+- **Workflow configurado:** Compilação Java operacional para desenvolvimento
 
-### 📋 Próximas Tarefas
-1. **Implementar mobs iniciais:** 3-5 criaturas básicas com comportamentos
-2. **Sistema tecnológico básico:** Energia cinética e máquinas fundamentais  
-3. **Sistema mágico básico:** Mana e feitiços elementares
+### ⚠️ Limitações Replit  
+- **NeoForge decompilation:** Falha devido a limitações de memória/CPU do ambiente
+- **Modo de desenvolvimento:** Replit funciona para edição de código e registros
+- **Builds completos e testes:** Devem ser feitos em ambiente local com mais recursos
+- **Estado atual:** Registros implementados, funcionalidade precisa ser adicionada localmente
+- **Recomendação:** Use Replit para desenvolvimento de registros, ambiente local para BlockEntities/lógica
+
+### 📋 Status da Implementação Tier 1/2
+**TIER 1 - TECNOLOGIA (Registros implementados):**
+- Materiais: Cobre, Estanho, Bronze + Chave de Calibração ✅
+- Sistema de energia: Motor a Vapor (necessita BlockEntity) ✅
+- Logística: Bomba Manual + Canos de Bronze (necessita lógica de fluidos) ✅
+- Máquinas: Triturador, Prensa, Fornalha (necessitam BlockEntities) ✅
+- Automação: Dutos Pneumáticos (necessita lógica de transporte) ✅
+
+**TIER 1 - MAGIA (Registros implementados):**
+- Materiais: Fragmentos de Alma + Essência Espiritual + Faca ✅
+- Estrutura: Pedra Rúnica (necessita lógica de transmutação) ✅
+- Amuletos: Penumbra + Caçador (necessitam funcionalidade) ✅
+- Madeira: Salgueiro Torcido completo ✅
+
+**TIER 2 - TECNOLOGIA (Registros implementados):**  
+- Materiais avançados: Cobalto + Aço Reforçado + Alto-Forno ✅
+- Energia: Geotérmico + Solar (necessitam BlockEntities) ✅
+- Automação: Esteiras + Braço + Fundidora (necessitam lógica) ✅
+- Circuitos: Velocidade, Eficiência, Fortuna ✅
+
+**TIER 2 - MAGIA (Registros implementados):**
+- Materiais: Espíritos + Essência Concentrada ✅  
+- Rituais: Altar Arcano + Pedestais + Infusão (necessitam lógica) ✅
+- Plantas: Rosa Térmica + Cogumelo Lunar + Piscina (necessitam mana) ✅
+- Artefatos: Regeneração + Núcleo + Bolsa (necessitam funcionalidade) ✅
+
+### 📋 Próximas Tarefas (Ambiente Local)
+1. **Implementar BlockEntities:** Adicionar lógica às máquinas (Steam Engine, Crusher, etc.)
+2. **Capabilities:** Sistemas de energia (FE), fluidos, automação  
+3. **GUIs e Menus:** Interfaces para máquinas e rituais
+4. **Recipes/Loot:** Receitas de crafting e loot tables
+5. **Worldgen:** Geração de minérios no mundo
 
 ## Arquitetura do Projeto
 
@@ -88,8 +125,9 @@ com.cronicasaetherium.mod/
 5. **Mixins desabilitados** temporariamente
 
 ### Workflow Status
-- **Minecraft Client workflow** configurado para desenvolvimento
-- **Build system** funcionando com dependências corretas
+- **Minecraft Client workflow** configurado e executando em development mode
+- **Build system** funcionando com dependências NeoForge corretas
+- **Replit environment:** Totalmente configurado para desenvolvimento do mod
 
 ## User Preferences
 - **Idioma principal:** Português brasileiro
