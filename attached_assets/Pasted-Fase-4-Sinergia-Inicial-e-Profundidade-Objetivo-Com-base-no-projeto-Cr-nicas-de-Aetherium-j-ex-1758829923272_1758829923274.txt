@@ -1,0 +1,98 @@
+Fase 4 - Sinergia Inicial e Profundidade
+Objetivo: Com base no projeto "Crônicas de Aetherium" já existente, este prompt foca em implementar as sugestões de sinergia para integrar os caminhos da Tecnologia e da Magia no early e mid-game (Tiers 1 e 2). O objetivo é que os dois pilares se apoiem mutuamente, em vez de serem caminhos paralelos.
+
+Diretriz Essencial: Continue a usar a estrutura de pacotes já definida e comente todo o novo código em português.
+
+Módulo 1: O Ponto de Encontro (A Ponte entre os Pilares)
+Tarefa: Modificar a receita do "portal" para o Tier 2 de tecnologia para exigir um componente mágico, forçando a interação entre as duas áreas.
+
+Crie um Novo Item Mágico:
+
+Nome: Tijolo Infundido com Almas (soul_infused_brick).
+
+Obtenção: Este item não é fabricado em uma mesa de trabalho comum. Ele deve ser criado usando a Pedra Rúnica (a "mesa de trabalho" mágica de Tier 1).
+
+Receita na Pedra Rúnica: Jogue 1 Tijolo de Argila (Brick) e 5 Essência Espiritual sobre a Pedra Rúnica para transmutá-lo no Tijolo Infundido com Almas.
+
+Aparência: Um tijolo com runas sutis que brilham fracamente no escuro.
+
+Modifique a Estrutura do Alto-Forno Industrial:
+
+Altere a receita ou a estrutura do Alto-Forno Industrial (o multi-bloco de Tier 2).
+
+O bloco central ou "controlador" da estrutura agora deve exigir 4 Tijolos Infundidos com Almas em sua receita de fabricação.
+
+Impacto: Isso torna impossível para um jogador alcançar o Tier 2 de tecnologia sem antes ter explorado o básico da magia de Tier 1.
+
+Módulo 2: Equipamentos com Identidade (Tier 1)
+Tarefa: Criar dois conjuntos de armadura de Tier 1, cada um com uma identidade clara, incentivando diferentes estilos de jogo.
+
+Crie a Armadura de Bronze (Tecnológica):
+
+Receita: Fabricada com Placas de Bronze (criadas na Prensa de Engrenagens).
+
+Atributos:
+
+Oferece alta proteção física, comparável à armadura de ferro do vanilla.
+
+Concede uma pequena quantidade de resistência a knockback por peça.
+
+Aparência: Robusta, metálica, com detalhes de engrenagens e rebites.
+
+Crie a Armadura de Salgueiro Torcido (Mágica):
+
+Receita: Fabricada com tábuas de Salgueiro Torcido e Fragmentos de Alma.
+
+Atributos:
+
+Oferece baixa proteção física, comparável à armadura de couro.
+
+Bônus de Conjunto: Cada peça equipada concede um bônus mágico. Por exemplo: "Reduz o custo de Essência Espiritual para rituais e transmutações em 5% por peça" (totalizando 20% com o conjunto completo).
+
+Aparência: Orgânica, escura, com runas gravadas na madeira e os Fragmentos de Alma pulsando com uma luz suave.
+
+Módulo 3: Ferramentas de Utilidade Cruzada (Tier 2)
+Tarefa: Implementar as mecânicas que permitem que um pilar auxilie ativamente o outro.
+
+Máquina Tecnológica para a Magia:
+
+Nome: Centrífuga Espiritual (spirit_centrifuge).
+
+Funcionamento: Uma máquina de Tier 2 que consome FE.
+
+Interface (GUI):
+
+Um slot de entrada para Bolsas de Espírito cheias.
+
+Três slots de saída, um para cada tipo de espírito (Puro, Maligno, Arcano).
+
+Lógica: Quando energizada, ela processa a bolsa de espírito do slot de entrada e distribui os espíritos contidos nela para as bolsas correspondentes nos slots de saída, automatizando a organização.
+
+Ritual Mágico para a Tecnologia:
+
+Nome: Ritual da Veia Oculta.
+
+Funcionamento: Um novo ritual para o Altar de Infusão de Tier 2.
+
+Ingredientes: Requer componentes como uma Bússola, Fragmentos de Alma e uma grande quantidade de Espíritos Arcanos.
+
+Efeito: Ao ser concluído, concede ao jogador um buff de 2 minutos. Durante este tempo, todos os blocos de minério (Cobre, Estanho, Ferro, Fragmentos de Alma, etc.) em um raio de 32 blocos ao redor do jogador brilharão e ficarão visíveis através das paredes.
+
+Módulo 4: O Guia Inteligente e Orgânico
+Tarefa: Modificar o livro-guia, Códice Escondido, para que a progressão pareça uma descoberta.
+
+Sistema de Desbloqueio de Conteúdo:
+
+Altere o Códice Escondido para que ele comece com poucas informações.
+
+Implemente um sistema de "gatilhos" (triggers). Quando o jogador fabrica um item-chave pela primeira vez, uma nova seção é desbloqueada no livro.
+
+Gatilhos de Exemplo:
+
+Ao fabricar a Faca de Sacrifício -> O capítulo sobre "Colheita de Espíritos" é revelado.
+
+Ao construir o Motor a Vapor -> O capítulo sobre "A Revolução a Vapor" é revelado.
+
+Ao criar o primeiro lingote de Aço Reforçado -> O capítulo sobre "A Era do Aço" se torna visível.
+
+Feedback ao Jogador: Mostre uma mensagem sutil no chat quando um novo conhecimento for desbloqueado, como: "Uma nova página tremula no seu Códice Escondido...".

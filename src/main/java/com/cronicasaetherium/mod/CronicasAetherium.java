@@ -21,6 +21,8 @@ import com.cronicasaetherium.mod.registry.ModCreativeTabs;
 import com.cronicasaetherium.mod.registry.ModBlockEntities;
 import com.cronicasaetherium.mod.common.commands.ProficiencyCommand;
 import com.cronicasaetherium.mod.config.ModConfig;
+import com.cronicasaetherium.mod.common.gui.ModMenuTypes;
+import com.cronicasaetherium.mod.common.recipe.ModRecipeTypes;
 
 /**
  * Classe principal do mod Crônicas de Aetherium
@@ -58,6 +60,8 @@ public class CronicasAetherium {
         ModBlockEntities.register(modEventBus);
         ModEntities.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipeTypes.register(modEventBus);
         
         // Registra o event bus principal do NeoForge
         NeoForge.EVENT_BUS.register(this);
