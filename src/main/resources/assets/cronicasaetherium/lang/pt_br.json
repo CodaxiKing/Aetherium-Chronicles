@@ -1,0 +1,58 @@
+{
+  "_comment": "Arquivo de tradução em Português Brasileiro para o mod Crônicas de Aetherium",
+  
+  "item.cronicasaetherium.aetherium_crystal": "Cristal de Aetherium",
+  "item.cronicasaetherium.aetherium_fragment": "Fragmento de Aetherium",
+  "item.cronicasaetherium.magic_essence": "Essência Mágica",
+  "item.cronicasaetherium.aetherium_gear": "Engrenagem de Aetherium",
+  "item.cronicasaetherium.magic_circuit": "Circuito Mágico",
+  "item.cronicasaetherium.ancient_dragon_amulet": "Amuleto do Dragão Ancestral",
+  "item.cronicasaetherium.corrupted_core": "Núcleo Corrompido",
+  "item.cronicasaetherium.void_orb": "Orbe do Vazio",
+  "item.cronicasaetherium.chronicles_tome": "Tomo das Crônicas",
+  
+  "block.cronicasaetherium.aetherium_ore": "Minério de Aetherium",
+  "block.cronicasaetherium.deepslate_aetherium_ore": "Minério de Aetherium Profundo",
+  "block.cronicasaetherium.aetherium_block": "Bloco de Aetherium",
+  "block.cronicasaetherium.aetherium_forge": "Forja de Aetherium",
+  "block.cronicasaetherium.crystal_mill": "Moinho de Cristais",
+  "block.cronicasaetherium.magic_altar": "Altar Mágico",
+  "block.cronicasaetherium.mana_crystal": "Cristal de Mana",
+  "block.cronicasaetherium.aetherium_flower": "Flor de Aetherium",
+  
+  "entity.cronicasaetherium.plains_giant": "Gigante das Planícies",
+  "entity.cronicasaetherium.floating_crystal": "Cristal Flutuante",
+  "entity.cronicasaetherium.ruin_guardian": "Guardião de Ruínas",
+  "entity.cronicasaetherium.insectoid_swarm": "Enxame Insetoide",
+  "entity.cronicasaetherium.shadow_stalker": "Caçador Sombrio",
+  "entity.cronicasaetherium.ancient_dragon": "Dragão Ancestral",
+  "entity.cronicasaetherium.tech_colossus": "Colosso Tecnológico",
+  "entity.cronicasaetherium.void_lord": "Senhor do Vazio",
+  "entity.cronicasaetherium.magic_projectile": "Projétil Mágico",
+  
+  "itemGroup.cronicasaetherium.main": "Crônicas de Aetherium",
+  "itemGroup.cronicasaetherium.technology": "Tecnologia Aetherium",
+  "itemGroup.cronicasaetherium.magic": "Magia Aetherium",
+  "itemGroup.cronicasaetherium.creatures": "Criaturas Aetherium",
+  
+  "tooltip.cronicasaetherium.aetherium_crystal": "Material básico encontrado em estruturas antigas",
+  "tooltip.cronicasaetherium.magic_essence": "Essência pura de energia mágica",
+  "tooltip.cronicasaetherium.ancient_dragon_amulet": "Use em um altar antigo para invocar uma criatura lendária",
+  "tooltip.cronicasaetherium.chronicles_tome": "Guia completo para os mistérios de Aetherium",
+  
+  "gui.cronicasaetherium.aetherium_forge": "Forja de Aetherium",
+  "gui.cronicasaetherium.magic_altar": "Altar Mágico",
+  "gui.cronicasaetherium.energy": "Energia: %s/%s",
+  "gui.cronicasaetherium.mana": "Mana: %s/%s",
+  
+  "message.cronicasaetherium.boss_summoned": "Uma presença ancestral desperta...",
+  "message.cronicasaetherium.insufficient_power": "Energia insuficiente para esta operação",
+  "message.cronicasaetherium.ritual_complete": "O ritual foi concluído com sucesso",
+  
+  "advancement.cronicasaetherium.root.title": "Crônicas de Aetherium",
+  "advancement.cronicasaetherium.root.description": "Descubra os mistérios de uma civilização perdida",
+  "advancement.cronicasaetherium.first_crystal.title": "Descoberta Cristalina",
+  "advancement.cronicasaetherium.first_crystal.description": "Encontre seu primeiro Cristal de Aetherium",
+  "advancement.cronicasaetherium.defeat_dragon.title": "Matador de Dragões",
+  "advancement.cronicasaetherium.defeat_dragon.description": "Derrote o Dragão Ancestral"
+}

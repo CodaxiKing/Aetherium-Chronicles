@@ -1,3 +1,30 @@
 modules = ["java"]
 [agent]
 expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["openjdk21", "gradle"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Minecraft Client"
+
+[[workflows.workflow]]
+name = "Minecraft Client"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./gradlew runClient"
+
+[workflows.workflow.metadata]
+outputType = "console"

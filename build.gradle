@@ -1,0 +1,118 @@
+// Configuração do build para o mod Crônicas de Aetherium
+// Desenvolvido para Minecraft 1.21.1 com NeoForge
+
+plugins {
+    id 'java-library'
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.neoforged.gradle.userdev' version '7.0.145'
+}
+
+version = '1.0.0'
+group = 'com.cronicasaetherium.mod'
+
+base {
+    archivesName = 'cronicas-aetherium'
+}
+
+// Versões utilizadas no projeto
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+
+// Configuração do repositório de dependências
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        name = 'NeoForged'
+        url = 'https://maven.neoforged.net/releases'
+    }
+}
+
+dependencies {
+    // Dependência principal do NeoForge
+    implementation "net.neoforged:neoforge:21.1.57"
+}
+
+runs {
+    configureEach { run ->
+        run.modSource sourceSets.main
+    }
+    // Configuração para executar o cliente do Minecraft
+    client {
+        workingDirectory project.file('run')
+    }
+    
+    // Configuração para executar o servidor do Minecraft
+    server {
+        workingDirectory project.file('run')
+    }
+    
+    // Configuração para geração de dados
+    data {
+        workingDirectory project.file('run')
+        programArguments.addAll '--mod', 'cronicasaetherium', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+    }
+    
+    // Configuração para game test server
+    gameTestServer {
+        workingDirectory project.file('run')
+    }
+}
+
+// Configuração para processamento de anotações durante a compilação
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+// Configuração do arquivo JAR principal
+jar {
+    archiveClassifier = ''
+    
+    manifest {
+        attributes([
+            "Specification-Title"     : "Crônicas de Aetherium",
+            "Specification-Vendor"    : "CronicasAetheriumTeam",
+            "Specification-Version"   : "1",
+            "Implementation-Title"    : project.name,
+            "Implementation-Version"  : project.jar.archiveVersion,
+            "Implementation-Vendor"   : "CronicasAetheriumTeam",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+// Configuração do JAR de sources
+tasks.register('sourcesJar', Jar) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+// Configuração do JAR de Javadoc
+tasks.register('javadocJar', Jar) {
+    archiveClassifier = 'javadoc'
+    from javadoc
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+// Configuração para publicação do mod
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            
+            artifact sourcesJar
+            artifact javadocJar
+        }
+    }
+}

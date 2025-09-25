@@ -1,0 +1,69 @@
+# Arquivo de configuração do mod para NeoForge
+# Define metadados e dependências do mod Crônicas de Aetherium
+
+# Versão do formato do arquivo de configuração
+modLoader = "neoforge"
+loaderVersion = "[4,)"
+license = "MIT"
+
+# Configurações principais do mod
+[[mods]]
+modId = "cronicasaetherium"
+version = "1.0.0"
+displayName = "Crônicas de Aetherium"
+updateJSONURL = ""
+displayURL = ""
+logoFile = ""
+credits = "Inspirado por OreSpawn, Create, Applied Energistics, Botania e outros mods clássicos"
+authors = "CronicasAetheriumTeam"
+
+# Descrição detalhada do mod
+description = '''
+Um mod abrangente que adiciona três sistemas interconectados ao Minecraft:
+
+🐉 CRIATURAS E EXPLORAÇÃO
+- Mais de 20 mobs únicos com comportamentos avançados
+- 3 chefes épicos com batalhas de múltiplos estágios
+- Estruturas procedimentais massivas em todas as dimensões
+
+⚙️ TECNOLOGIA E AUTOMAÇÃO
+- Sistema de energia cinética com máquinas visuais
+- Armazenamento digital e autocrafting avançado
+- Processamento de minérios e geração de energia
+
+✨ MAGIA E MISTICISMO
+- Sistema de mana baseado na natureza
+- Criaturas míticas domesticáveis
+- Feitiços customizáveis e artefatos poderosos
+
+Todos os sistemas se integram para criar uma experiência de progressão única e equilibrada.
+'''
+
+# Logo do mod (quando disponível)
+# logoFile = "logo.png"
+
+# Configurações de compatibilidade e dependências
+[[dependencies.cronicasaetherium]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cronicasaetherium]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.22)"
+ordering = "NONE"
+side = "BOTH"
+
+# Configurações de compatibilidade (opcional)
+# Aqui podem ser adicionadas dependências opcionais com outros mods
+
+# Configurações de rede (mixins desabilitados por enquanto)
+# [[mixins]]
+# config = "cronicasaetherium.mixins.json"
+
+# Configurações adicionais
+[modproperties]
+# Propriedades personalizadas do mod podem ser definidas aqui
