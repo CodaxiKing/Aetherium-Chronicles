@@ -1,204 +1,45 @@
-# Crônicas de Aetherium - Status do Projeto
+# Overview
 
-## Visão Geral
-Projeto de mod para Minecraft 1.21.1 usando NeoForge que implementa três sistemas principais: criaturas/exploração, tecnologia/automação, e magia/misticismo.
+Crônicas de Aetherium is a comprehensive Minecraft mod for version 1.21.1 built with NeoForge that implements three main progression systems: creatures/exploration, technology/automation, and magic/mysticism. The mod draws inspiration from OreSpawn's expansive nature while integrating modern and deep systems similar to Create, Applied Energistics 2, and Mekanism. It features a tiered progression system where players can choose to focus on technological automation with steam power and mechanical machines, mystical magic with soul harvesting and arcane rituals, or explore a hybrid approach that synergizes both paths.
 
-## Estado Atual do Desenvolvimento
-**Data da última atualização:** 25 de Setembro, 2025
+# User Preferences
 
-### ✅ Concluído
-- **Ambiente de desenvolvimento:** Java 21, Gradle 8.8, NeoForge 21.1.57
-- **Estrutura base do projeto:** Configuração completa de build.gradle, settings.gradle, gradle.properties
-- **Sistema de registro:** ModItems, ModBlocks, ModEntities, ModCreativeTabs
-- **Configuração do mod:** neoforge.mods.toml com metadados corretos
-- **Localização:** Arquivos de linguagem em português e inglês
-- **Documentação:** README.md completo com instruções detalhadas de setup
+Preferred communication style: Simple, everyday language.
 
-### ✅ Setup Replit Concluído
-- **Ambiente Java:** Java 21 instalado e configurado
-- **Build System:** Gradle 8.8 com NeoForge 21.1.57 (configuração correta)
-- **Projeto estruturado:** Todos os arquivos fonte e configurações prontos
-- **Workflow configurado:** Compilação Java operacional para desenvolvimento
+# System Architecture
 
-### ⚠️ Limitações Replit  
-- **NeoForge decompilation:** Falha devido a limitações de memória/CPU do ambiente
-- **Modo de desenvolvimento:** Replit funciona perfeitamente para edição de código e registros
-- **Builds completos e testes:** Devem ser feitos em ambiente local com mais recursos
-- **Estado atual:** ✅ TODOS OS SISTEMAS IMPLEMENTADOS - BlockEntities, Capabilities, GUIs, Receitas, WorldGen
-- **Recomendação:** Código pronto para ambiente local - implementação completa dos sistemas Tier 1/2
+## Core Framework
+The mod is built on NeoForge 21.1.57 for Minecraft 1.21.1 using Java 21. The project follows a modular architecture with clear separation between technology, magic, and exploration systems. The package structure follows standard mod conventions with separate directories for common, client, and data generation code.
 
-### 📋 Status da Implementação Tier 1/2
-**TIER 1 - TECNOLOGIA (COMPLETAMENTE IMPLEMENTADO):**
-- Materiais: Cobre, Estanho, Bronze + Chave de Calibração ✅
-- Sistema de energia: Motor a Vapor (BlockEntity + GUI + Capabilities completas) ✅
-- Máquinas: Triturador Mecânico (BlockEntity + GUI + Receitas completas) ✅
-- Automação: Sistema de energia FE + ItemHandler para automação ✅
-- WorldGen: Minérios Cobre/Estanho gerando corretamente no mundo ✅
+## Progression System Design
+The mod implements a tiered progression system (Tier 1 and Tier 2) where each tier introduces new materials, machines, and capabilities. The architecture supports both independent progression paths (pure technology or pure magic) and hybrid approaches that require components from both systems. This creates meaningful player choice while encouraging experimentation with different playstyles.
 
-**TIER 1 - MAGIA (SINERGIA IMPLEMENTADA):**
-- Materiais: Fragmentos de Alma + Essência Espiritual + Faca ✅
-- Sinergia Tech-Magic: Infusora de Mana (BlockEntity + GUI completas) ✅
-- Sistema de conversão: Energia FE → Mana (base implementada) ✅
-- Madeira: Salgueiro Torcido completo ✅
+## Energy and Resource Management
+The technology path uses Forge Energy (FE) as its power system, with steam engines serving as the primary early-game power source. The magic path operates on a custom essence system where Spirit Essence serves as the magical "fuel" obtained through soul harvesting mechanics. A key architectural decision is the tech-magic bridge system, where certain advanced machines can convert between FE and magical essence.
 
-**TIER 2 - TECNOLOGIA (SISTEMA BASE IMPLEMENTADO):**  
-- Materiais avançados: Cobalto + Aço Reforçado + Alto-Forno ✅
-- WorldGen: Cobalto raro gerando em profundidades extremas ✅
-- Sistema de capabilities: Energia + Itens + Providers configuráveis ✅
-- Receitas avançadas: Tipos de receita para Alloy Smelting implementados ✅
+## Block Entity Architecture
+The mod implements sophisticated block entities with full capability support for energy, item handling, and fluid management. All machines feature custom GUIs with progress bars, upgrade slots, and configuration options. The block entity system supports automation through item ducts and energy conduits, with proper serialization for world persistence.
 
-**TIER 2 - MAGIA (Registros implementados):**
-- Materiais: Espíritos + Essência Concentrada ✅  
-- Rituais: Altar Arcano + Pedestais + Infusão (necessitam lógica) ✅
-- Plantas: Rosa Térmica + Cogumelo Lunar + Piscina (necessitam mana) ✅
-- Artefatos: Regeneração + Núcleo + Bolsa (necessitam funcionalidade) ✅
+## World Generation Integration
+The mod adds new ores (copper, tin, cobalt) with custom world generation features that spawn at appropriate depths and frequencies. The generation system is designed to encourage exploration while providing reasonable resource availability for progression.
 
-### ✅ IMPLEMENTAÇÃO COMPLETA - Setembro 2025
+## Registration and Data Systems
+All mod content uses centralized registration systems (ModItems, ModBlocks, ModEntities, ModCreativeTabs) with proper deferred register implementations. The mod includes comprehensive recipe systems for custom machine types and supports both English and Portuguese localizations.
 
-**SISTEMAS IMPLEMENTADOS:**
-1. **BlockEntities Completas:** ✅
-   - SteamEngineBlockEntity: Geração de energia FE com combustível + água
-   - MechanicalCrusherBlockEntity: Processamento de minérios (2x yield + subprodutos)
-   - ManaInfuserBlockEntity: Conversão de energia em mana (sinergia tech-magic)
+# External Dependencies
 
-2. **Sistema de Capabilities:** ✅
-   - ModEnergyStorage: Armazenamento FE customizado com callbacks
-   - ModItemHandler: Inventários configuráveis com validação de slots
-   - CapabilityProvider: Exposição automática de capabilities por direção
+## Core Framework Dependencies
+- **NeoForge 21.1.57**: Primary modding framework providing the base API and systems
+- **Minecraft 1.21.1**: Target Minecraft version with specific mappings and compatibility requirements
+- **Java 21**: Required runtime environment for modern language features and performance
 
-3. **Interfaces Gráficas:** ✅
-   - SteamEngineMenu: GUI do motor com barras de energia/combustível/aquecimento
-   - MechanicalCrusherMenu: GUI do triturador com progresso e slots I/O
-   - ManaInfuserMenu: GUI da infusora com energia e conversão de mana
-   - ModMenuTypes: Sistema completo de registro de GUIs
+## Build and Development Tools
+- **Gradle 8.8**: Build automation and dependency management system
+- **NeoForm**: Minecraft deobfuscation and mapping system for development environment
+- **Mixins**: Code injection framework for advanced mod compatibility and feature implementation
 
-4. **Sistema de Receitas:** ✅
-   - ModRecipeTypes: Tipos para Crushing, Steam, Mana, Alloy, Crystal
-   - Receitas de trituração com subprodutos balanceados
-   - Base para receitas avançadas Tier 2
+## Optional Integration Targets
+The mod is designed with extensibility in mind to potentially integrate with popular automation and magic mods in the ecosystem, though it functions as a standalone experience. The energy system uses standard Forge Energy to ensure compatibility with other tech mods, while the magic system is designed to be self-contained but extensible.
 
-5. **World Generation:** ✅
-   - ModConfiguredFeatures: Features de minérios com tamanhos balanceados
-   - ModPlacedFeatures: Placement com raridade e profundidades corretas  
-   - ModBiomeModifiers: Integração com todos os biomas do Overworld
-   - Minérios: Cobre (comum), Estanho (médio), Cobalto (raro profundo)
-
-### ✅ FASE 4 IMPLEMENTADA - SINERGIA TECNOLOGIA/MAGIA (Setembro 2025)
-
-**MÓDULO 1 - O PONTO DE ENCONTRO:**
-- **Tijolo Infundido com Almas** (SoulInfusedBrickItem) ✅
-  - Item ponte entre sistemas tech/magic
-  - Obtido via transmutação na Pedra Rúnica (1 Brick + 5 Essência Espiritual)
-  - Brilho mágico e tooltips explicativos
-  - Essencial para Alto-Forno Industrial (Tier 2)
-
-**MÓDULO 2 - EQUIPAMENTOS COM IDENTIDADE:**
-- **Armadura de Bronze** (BronzeArmorItem) - Caminho Tecnológico ✅
-  - Proteção física alta (equivalente ferro vanilla)
-  - Resistência a knockback aumentada (+10% por peça)
-  - Aparência robusta e industrial
-- **Armadura de Salgueiro Torcido** (TwistedWillowArmorItem) - Caminho Mágico ✅
-  - Proteção física baixa, benefícios mágicos altos
-  - Redução de custo de Essência Espiritual (-5% por peça, máx 20%)
-  - Brilho mágico e runas pulsantes
-
-**MÓDULO 3 - FERRAMENTAS DE UTILIDADE CRUZADA:**
-- **Centrífuga Espiritual** (SpiritCentrifugeBlockEntity) ✅
-  - Máquina tech que processa elementos mágicos
-  - Consome FE para separar Bolsas de Espírito mistas
-  - 3 saídas: Espírito Puro, Maligno, Arcano
-  - Interface compatível com automação
-- **Ritual da Veia Oculta** (VeinRitualEffect) ✅
-  - Efeito mágico para auxiliar mineração tech
-  - Detecta minérios em raio de 32 blocos
-  - Duração: 2 minutos, highlighting visual
-  - Executado no Altar de Infusão Tier 2
-
-**MÓDULO 4 - GUIA INTELIGENTE:**
-- **Sistema de Códice Progressivo** (ProgressiveCodexSystem) ✅
-  - Desbloqueio automático baseado em gatilhos de crafting
-  - Mensagens sutis sobre novo conhecimento
-  - Capítulos especializados por pilar (tech/magic)
-  - Persistência de progresso entre sessões
-
-### 📋 Próximas Tarefas (Ambiente Local)
-1. **Registrar Sistemas da Fase 4:** Adicionar novos itens/blocos aos registros
-2. **Integrar Receitas:** Transmutação Pedra Rúnica, modificar Alto-Forno  
-3. **Finalizar GUIs:** Centrífuga Espiritual, highlighting visual do ritual
-4. **Aplicar Attributes:** Resistência knockback, redução custo essência
-5. **Testar Sinergias:** Verificar progressão tech-magic integrada
-
-## Arquitetura do Projeto
-
-### Estrutura de Pacotes
-```
-com.cronicasaetherium.mod/
-├── CronicasAetherium.java          # Classe principal
-├── registry/                       # Sistema de registro
-│   ├── ModItems.java
-│   ├── ModBlocks.java  
-│   ├── ModEntities.java
-│   └── ModCreativeTabs.java
-├── items/                          # Classes de itens (futuro)
-├── blocks/                         # Classes de blocos (futuro)
-├── entities/                       # Classes de entidades (futuro)
-└── systems/                        # Sistemas de tech/magia (futuro)
-```
-
-### Sistemas Planejados
-
-#### 1. Sistema de Criaturas (OreSpawn-inspired)
-- **20+ mobs únicos** com IA avançada
-- **3 chefes épicos** multi-fase
-- **Estruturas procedimentais** massivas
-- **Spawn específico por bioma**
-
-#### 2. Sistema Tecnológico (Create/AE2/Mekanism-inspired)
-- **Energia cinética visual** com engrenagens e correias
-- **Armazenamento digital** com autocrafting
-- **Processamento avançado** de minérios (3:1, 4:1)
-- **Geração de energia** diversificada
-
-#### 3. Sistema Mágico (Botania/Ars Nouveau-inspired)
-- **Magia baseada na natureza** com plantas
-- **Criaturas míticas** domesticáveis
-- **Sistema de feitiços** customizável
-- **Artefatos únicos** não-craftáveis
-
-## Decisões Técnicas
-
-### Build System
-- **NeoForge 21.1.57** para Minecraft 1.21.1
-- **Java 21** (requisito para MC 1.21+)
-- **Gradle 8.8** com wrapper
-- **DeferredRegister** para todos os registros
-
-### Comentários e Documentação
-- **Todos os comentários em português** (requisito do projeto)
-- **Documentação detalhada** para cada classe e método
-- **README abrangente** com setup completo
-
-### Performance e Compatibilidade
-- **Otimização proativa** para grandes quantidades de entidades
-- **Texturas eficientes** com resoluções adequadas
-- **Integração entre sistemas** para progressão equilibrada
-
-## Problemas Conhecidos e Soluções
-
-### Fixes Aplicados
-1. **neoforge.mods.toml:** Correção do loaderVersion para "[4,)" 
-2. **Entidades temporariamente comentadas** para evitar crashes de build
-3. **BlockItems registrados corretamente** para todos os blocos
-4. **CreativeModeTab** adicionado para organização no jogo
-5. **Mixins desabilitados** temporariamente
-
-### Workflow Status
-- **Minecraft Client workflow** configurado e executando em development mode
-- **Build system** funcionando com dependências NeoForge corretas
-- **Replit environment:** Totalmente configurado para desenvolvimento do mod
-
-## User Preferences
-- **Idioma principal:** Português brasileiro
-- **Estilo de comentários:** Detalhado e explicativo
-- **Documentação:** Completa e acessível para desenvolvedores inexperientes
-- **Progressão:** Sistemas interconectados e equilibrados
+## Asset and Localization Systems
+The mod includes comprehensive texture and model assets, with support for multiple languages through Minecraft's built-in localization system. All text is externalized to language files for easy translation and maintenance.

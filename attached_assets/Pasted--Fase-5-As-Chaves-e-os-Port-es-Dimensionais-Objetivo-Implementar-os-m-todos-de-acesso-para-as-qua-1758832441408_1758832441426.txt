@@ -1,0 +1,97 @@
+ Fase 5 - As Chaves e os Portões Dimensionais
+Objetivo: Implementar os métodos de acesso para as quatro novas dimensões do mod (Crisol Arcano e as três dimensões dos chefes). Cada método deve ser único, temático e representar um marco na progressão do jogador.
+
+Diretriz Essencial: Continue a comentar todo o código em português, especialmente a lógica complexa de verificação das estruturas e ativação dos portais.
+
+1. O Portal Mágico: Acesso ao "Crisol Arcano"
+Este é o primeiro grande portal que o jogador construirá, e deve parecer um feito de pura magia arcana.
+
+Como Seria (A Experiência do Jogador):
+O jogador não "fabrica" um portal, ele realiza um "Ritual de Abertura de Fenda". Ele precisa primeiro construir uma estrutura ritualística. A estrutura consiste em um anel de 4x4 (espaço interno de 2x2) de um novo bloco, o Salgueiro Torcido Polido. Nos quatro cantos, ele deve substituir o bloco por uma Placa Rúnica.
+
+Para ativar, o jogador coloca ingredientes raros sobre cada Placa Rúnica (clicando com o botão direito) e, em seguida, usa sua Varinha da Floresta no bloco central do chão, dentro da estrutura. Se tudo estiver correto, um evento espetacular acontece: partículas de energia fluem das Placas para o centro, o céu acima da estrutura escurece, e após um som crescente e um clarão de luz, o espaço 2x2 interno se transforma em um portal cintilante com a textura do céu do Crisol Arcano.
+
+Detalhes de Implementação (Para a IA):
+Crie Dois Novos Blocos Decorativos/Funcionais:
+
+Salgueiro Torcido Polido: Uma versão decorativa e mais refinada da madeira do Salgueiro.
+
+Placa Rúnica: Um bloco que pode armazenar um item (visível no topo) e que emite uma luz suave.
+
+Crie o Bloco de Portal:
+
+PortalCrisolArcanoBlock: O bloco que preenche o portal. Crie uma textura animada única para ele (ex: uma nebulosa roxa pulsante).
+
+Implemente a Lógica de Ativação:
+
+Na classe da Varinha da Floresta (onItemUse), verifique se o alvo é o bloco central de uma estrutura 4x4 válida.
+
+Verifique se os quatro cantos são Placas Rúnicas.
+
+Verifique se as Placas contêm os ingredientes corretos (ex: um Coração de Adamantina do mini-boss, um Espírito Arcano Purificado, etc.).
+
+Se todas as condições forem atendidas:
+
+Consuma os itens das Placas.
+
+Inicie uma sequência de efeitos sonoros e de partículas.
+
+Substitua os 4 blocos de ar centrais pelos blocos de PortalCrisolArcanoBlock.
+
+2. O Portal do Conquistador: Acesso às Dimensões dos Chefes
+Em vez de três métodos de acesso aleatórios, vamos unificá-los em um sistema central que mostra a maestria do jogador sobre as dimensões: o Nexus Dimensional.
+
+Como Seria (A Experiência do Jogador):
+Após derrotar o primeiro chefe principal ("O Autômato Corrompido"), o jogador aprende a receita para o Nexus Dimensional, um bloco central de tecnologia e magia. Ele coloca este bloco em um local de honra.
+
+Para acessar uma dimensão de chefe, o jogador precisa fabricar uma "Chave de Sintonização Dimensional" específica para aquele domínio. Por exemplo, a Chave da Forja Morta (tecnológica) e a Chave do Sanctum Selado (mágica).
+
+Ao usar a chave no Nexus, o bloco ganha vida. Sua textura muda para refletir a dimensão sintonizada (uma engrenagem para a Forja, um cristal para o Sanctum) e um portal estável se abre em frente ou acima dele. O Nexus permanece sintonizado até que outra chave seja usada.
+
+Detalhes de Implementação (Para a IA):
+Crie o Bloco Central:
+
+NexusDimensionalBlock: Um BlockEntity que pode salvar dados (qual dimensão está ativa). Ele tem uma textura base neutra, mas pode ter texturas alternativas ou overlays.
+
+Crie os Itens-Chave:
+
+ChaveDaForjaMorta: Fabricada com drops do Autômato Corrompido e componentes de tecnologia de Tier 3.
+
+ChaveDoSanctumSelado: Criada através de um Ritual de Infusão de Tier 3, usando componentes mágicos avançados.
+
+Implemente a Lógica do Nexus:
+
+No método onBlockActivated do NexusDimensionalBlock:
+
+Verifique se o jogador está segurando uma "Chave de Sintonização".
+
+Se sim, consuma a chave, salve o ID da dimensão alvo no BlockEntity e mude o estado do bloco para ativar a textura/overlay correspondente.
+
+Verifique se há espaço e gere um portal de 2x3 na frente do Nexus. O portal terá uma cor/textura diferente para cada dimensão.
+
+Se o jogador usar o Nexus com a mão vazia enquanto um portal está ativo, o portal se fecha.
+
+3. A "Não-Portal": Acesso ao "Vazio Intersticial"
+Este acesso não deve ser um portal estável. Deve ser um evento caótico, perigoso e de mão única.
+
+Como Seria (A Experiência do Jogador):
+Não há estrutura a ser construída. O jogador precisa fabricar a Semente da Incerteza, um artefato instável que pulsa com energia caótica. A lenda no Códice diz que a realidade é "mais fina" nos limites do mundo.
+
+O jogador viaja para o ponto mais alto (limite de construção) ou o mais baixo (bedrock) do Overworld. Lá, ele usa a Semente. A realidade se despedaça ao seu redor: a tela treme, shaders de glitch distorcem a visão, sons de estática e vidro quebrando preenchem o áudio. Em vez de um portal se abrir, o mundo parece ser "sugado" para dentro do jogador antes que ele seja abruptamente transportado para o Vazio. Não há portal de volta. A única saída é a vitória ou a morte.
+
+Detalhes de Implementação (Para a IA):
+Refine o Item SementeDaIncerteza:
+
+No método onItemRightClick do item:
+
+Verifique a coordenada Y do jogador. A lógica só prossegue se player.getY() >= 319 ou player.getY() <= -63.
+
+Se a condição for atendida, inicie o evento do lado do cliente e do servidor.
+
+Lado do Cliente: Acione os efeitos visuais (shaders, tremores de câmera) e sonoros.
+
+Lado do Servidor: Após um delay de 3-4 segundos (enquanto os efeitos acontecem), teleporte o jogador para as coordenadas de spawn do "Vazio Intersticial" e consuma o item.
+
+Lógica da Dimensão:
+
+Na lógica da dimensão "Vazio Intersticial", configure-a para que não haja um portal de retorno padrão. O comando de /spawn ou a morte são as saídas normais, além do teleporte acionado pela derrota do chefe.

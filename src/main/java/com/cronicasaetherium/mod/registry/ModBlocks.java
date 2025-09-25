@@ -649,6 +649,63 @@ public class ModBlocks {
             .strength(4.0f, 5.0f)
             .sound(SoundType.METAL)
             .lightLevel(state -> 4)));
+
+    // ================================
+    // BLOCOS DE PORTAIS DIMENSIONAIS
+    // ================================
+
+    /**
+     * Salgueiro Torcido Polido - Bloco decorativo para estruturas de portal
+     * Versão refinada da madeira do Salgueiro Torcido, polida com essências mágicas
+     * Componente principal para a estrutura 4x4 do Portal Mágico
+     */
+    public static final Supplier<Block> POLISHED_TWISTED_WILLOW = BLOCKS.register("polished_twisted_willow",
+        () -> new com.cronicasaetherium.mod.blocks.decoration.PolishedTwistedWillowBlock());
+
+    /**
+     * Placa Rúnica - Pedestal ritual que armazena e exibe itens
+     * Usado nos cantos da estrutura portal para conter ingredientes rituais
+     * Essencial para ativação do Portal Mágico ao Crisol Arcano
+     */
+    public static final Supplier<Block> RUNIC_PLATE = BLOCKS.register("runic_plate",
+        () -> new com.cronicasaetherium.mod.blocks.decoration.RunicPlateBlock());
+
+    /**
+     * Portal do Crisol Arcano - Bloco ativo do portal mágico
+     * Criado dinamicamente quando o ritual é completado com a Varinha da Floresta
+     * Teleporta entidades para a dimensão do Crisol Arcano
+     */
+    public static final Supplier<Block> CRISOL_ARCANO_PORTAL = BLOCKS.register("crisol_arcano_portal",
+        () -> new com.cronicasaetherium.mod.blocks.dimension.CrisolArcanoPortalBlock());
+
+    /**
+     * Nexus Dimensional - Bloco central para acesso às dimensões dos chefes
+     * Aceita Chaves de Sintonização para abrir portais estáveis para diferentes dimensões
+     * Representa a maestria do jogador sobre o sistema dimensional
+     */
+    public static final Supplier<Block> DIMENSIONAL_NEXUS = BLOCKS.register("dimensional_nexus",
+        () -> new com.cronicasaetherium.mod.blocks.dimension.DimensionalNexusBlock());
+
+    /**
+     * Portal da Forja Morta - Portal tecnológico para dimensão dos chefes mecânicos
+     * Criado pelo Nexus Dimensional quando sintonizado com Chave da Forja Morta
+     */
+    public static final Supplier<Block> FORJA_MORTA_PORTAL = BLOCKS.register("forja_morta_portal",
+        () -> new com.cronicasaetherium.mod.blocks.dimension.ForjaMortaPortalBlock());
+
+    /**
+     * Portal do Sanctum Selado - Portal mágico para dimensão dos chefes arcanos
+     * Criado pelo Nexus Dimensional quando sintonizado com Chave do Sanctum Selado
+     */
+    public static final Supplier<Block> SANCTUM_SELADO_PORTAL = BLOCKS.register("sanctum_selado_portal",
+        () -> new com.cronicasaetherium.mod.blocks.dimension.SanctumSeladoPortalBlock());
+
+    /**
+     * Portal do Nexus do Vazio - Portal caótico para dimensões especiais
+     * Criado pelo Nexus Dimensional com chaves especiais do vazio
+     */
+    public static final Supplier<Block> VOID_NEXUS_PORTAL = BLOCKS.register("void_nexus_portal",
+        () -> new com.cronicasaetherium.mod.blocks.dimension.VoidNexusPortalBlock());
     
     /**
      * Portal Arcano Ativo - Bloco de teleportação para o Crisol Arcano
@@ -829,6 +886,16 @@ public class ModBlocks {
     
     public static final Supplier<Item> SPIRIT_CENTRIFUGE_ITEM = ModItems.ITEMS.register("spirit_centrifuge",
         () -> new BlockItem(SPIRIT_CENTRIFUGE.get(), new Item.Properties()));
+
+    // BlockItems para blocos de portais dimensionais
+    public static final Supplier<Item> POLISHED_TWISTED_WILLOW_ITEM = ModItems.ITEMS.register("polished_twisted_willow",
+        () -> new BlockItem(POLISHED_TWISTED_WILLOW.get(), new Item.Properties()));
+
+    public static final Supplier<Item> RUNIC_PLATE_ITEM = ModItems.ITEMS.register("runic_plate",
+        () -> new BlockItem(RUNIC_PLATE.get(), new Item.Properties()));
+
+    public static final Supplier<Item> DIMENSIONAL_NEXUS_ITEM = ModItems.ITEMS.register("dimensional_nexus",
+        () -> new BlockItem(DIMENSIONAL_NEXUS.get(), new Item.Properties()));
     
     // Portal arcano não precisa de BlockItem (criado dinamicamente)
     

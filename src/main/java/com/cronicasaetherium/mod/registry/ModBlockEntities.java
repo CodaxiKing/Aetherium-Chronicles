@@ -65,6 +65,26 @@ public class ModBlockEntities {
         BLOCK_ENTITIES.register("spirit_centrifuge", () -> 
             BlockEntityType.Builder.of(com.cronicasaetherium.mod.blocks.synergy.SpiritCentrifugeBlockEntity::new, ModBlocks.SPIRIT_CENTRIFUGE.get())
                 .build(null));
+
+    /**
+     * BlockEntity da Placa Rúnica
+     * Armazena e exibe itens rituais para ativação de portais
+     * Essencial para o sistema de Portal Mágico
+     */
+    public static final Supplier<BlockEntityType<com.cronicasaetherium.mod.blocks.decoration.RunicPlateBlockEntity>> RUNIC_PLATE = 
+        BLOCK_ENTITIES.register("runic_plate", () -> 
+            BlockEntityType.Builder.of(com.cronicasaetherium.mod.blocks.decoration.RunicPlateBlockEntity::new, ModBlocks.RUNIC_PLATE.get())
+                .build(null));
+
+    /**
+     * BlockEntity do Nexus Dimensional
+     * Gerencia estado de sintonização e lógica de portais dimensionais
+     * Hub central para acesso às dimensões dos chefes
+     */
+    public static final Supplier<BlockEntityType<com.cronicasaetherium.mod.blocks.dimension.DimensionalNexusBlockEntity>> DIMENSIONAL_NEXUS = 
+        BLOCK_ENTITIES.register("dimensional_nexus", () -> 
+            BlockEntityType.Builder.of(com.cronicasaetherium.mod.blocks.dimension.DimensionalNexusBlockEntity::new, ModBlocks.DIMENSIONAL_NEXUS.get())
+                .build(null));
     
     /**
      * Método de registro que deve ser chamado na inicialização do mod

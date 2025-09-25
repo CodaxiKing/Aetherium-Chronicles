@@ -270,10 +270,7 @@ public class ModItems {
      * Ferramenta essencial para progressão mágica Tier 2
      */
     public static final Supplier<Item> FOREST_WAND = ITEMS.register("forest_wand",
-        () -> new Item(new Item.Properties()
-            .stacksTo(1)
-            .durability(100)
-            .rarity(Rarity.UNCOMMON)));
+        () -> new com.cronicasaetherium.mod.items.magic.ForestWandItem());
     
     // ========= ARTEFATOS TIER 2: SINERGIA ==========
     
@@ -519,6 +516,34 @@ public class ModItems {
         () -> new WornJournalItem(new Item.Properties()
             .stacksTo(1)
             .rarity(Rarity.UNCOMMON)));
+
+    // ================================
+    // ITENS DIMENSIONAIS - PHASE 5
+    // ================================
+
+    /**
+     * Chave da Forja Morta - Chave de sintonização para dimensão tecnológica
+     * Permite acesso à dimensão dos chefes mecânicos através do Nexus Dimensional
+     * Criada com drops do Autômato Corrompido e componentes Tier 3
+     */
+    public static final Supplier<Item> FORJA_MORTA_KEY = ITEMS.register("forja_morta_key",
+        () -> new com.cronicasaetherium.mod.items.dimensional.ForjaMortaKeyItem());
+
+    /**
+     * Chave do Sanctum Selado - Chave de sintonização para dimensão mágica
+     * Permite acesso à dimensão dos chefes arcanos através do Nexus Dimensional
+     * Criada através de Ritual de Infusão Tier 3 com ingredientes raros
+     */
+    public static final Supplier<Item> SANCTUM_SELADO_KEY = ITEMS.register("sanctum_selado_key",
+        () -> new com.cronicasaetherium.mod.items.dimensional.SanctumSeladoKeyItem());
+
+    /**
+     * Semente da Incerteza - Artefato caótico para acesso direto ao Vazio
+     * Não cria portal, mas fragmenta a realidade para teleportação direta
+     * Viagem de mão única - só funciona nos limites extremos do mundo
+     */
+    public static final Supplier<Item> SEED_OF_UNCERTAINTY = ITEMS.register("seed_of_uncertainty",
+        () -> new com.cronicasaetherium.mod.items.dimensional.SeedOfUncertaintyItem());
     
     /**
      * Método de registro que deve ser chamado na inicialização do mod
