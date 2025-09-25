@@ -5,6 +5,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.ChatFormatting;
 
 import java.util.List;
 
@@ -30,11 +32,8 @@ public class SoulInfusedBrickItem extends Item {
      * Construtor do Tijolo Infundido com Almas
      * Configura propriedades básicas e aparência especial
      */
-    public SoulInfusedBrickItem() {
-        super(new Properties()
-            .stacksTo(64) // Empilha até 64 unidades
-            .rarity(net.minecraft.world.item.Rarity.UNCOMMON) // Raridade incomum (cor amarela)
-        );
+    public SoulInfusedBrickItem(Properties properties) {
+        super(properties);
     }
     
     /**
@@ -42,27 +41,27 @@ public class SoulInfusedBrickItem extends Item {
      * Informa como obter e para que serve
      */
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
         
         // Descrição principal do item
         tooltipComponents.add(Component.translatable("item.cronicasaetherium.soul_infused_brick.desc1")
-            .withStyle(net.minecraft.ChatFormatting.GRAY));
+            .withStyle(ChatFormatting.GRAY));
         
         // Como obter
         tooltipComponents.add(Component.translatable("item.cronicasaetherium.soul_infused_brick.desc2")
-            .withStyle(net.minecraft.ChatFormatting.DARK_PURPLE));
+            .withStyle(ChatFormatting.DARK_PURPLE));
         
         // Para que serve
         tooltipComponents.add(Component.translatable("item.cronicasaetherium.soul_infused_brick.desc3")
-            .withStyle(net.minecraft.ChatFormatting.GOLD));
+            .withStyle(ChatFormatting.GOLD));
         
         // Linha vazia para separação
         tooltipComponents.add(Component.empty());
         
         // Dica de sinergia
         tooltipComponents.add(Component.translatable("item.cronicasaetherium.synergy.hint")
-            .withStyle(net.minecraft.ChatFormatting.LIGHT_PURPLE, net.minecraft.ChatFormatting.ITALIC));
+            .withStyle(ChatFormatting.LIGHT_PURPLE, ChatFormatting.ITALIC));
     }
     
     /**

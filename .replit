@@ -26,12 +26,12 @@ args = "Minecraft Client"
 name = "Compile Code"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "./gradlew compileJava --no-daemon"
-
 [workflows.workflow.metadata]
 outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./gradlew --no-daemon compileJava"
 
 [[workflows.workflow]]
 name = "Minecraft Client"

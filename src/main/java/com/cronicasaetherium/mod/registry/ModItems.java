@@ -3,12 +3,16 @@ package com.cronicasaetherium.mod.registry;
 import com.cronicasaetherium.mod.CronicasAetherium;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import com.cronicasaetherium.mod.items.synergy.RuneOfEfficiencyItem;
+import com.cronicasaetherium.mod.items.synergy.SoulInfusedBrickItem;
 import com.cronicasaetherium.mod.items.lore.WornJournalItem;
 import com.cronicasaetherium.mod.items.dimension.UnstableHeartItem;
+import com.cronicasaetherium.mod.items.armor.BronzeArmorItem;
+import com.cronicasaetherium.mod.items.armor.TwistedWillowArmorItem;
 
 import java.util.function.Supplier;
 
@@ -453,6 +457,46 @@ public class ModItems {
         () -> new RuneOfEfficiencyItem(new Item.Properties()
             .stacksTo(16)
             .rarity(Rarity.UNCOMMON)));
+
+    /**
+     * Tijolo Infundido com Almas - Item ponte entre tecnologia e magia
+     * Criado através de transmutação na Pedra Rúnica
+     * Essencial para progressão tecnológica Tier 2
+     */
+    public static final Supplier<Item> SOUL_INFUSED_BRICK = ITEMS.register("soul_infused_brick",
+        () -> new SoulInfusedBrickItem(new Item.Properties()
+            .stacksTo(64)
+            .rarity(Rarity.UNCOMMON)));
+
+    // ================================
+    // ARMADURAS DE SINERGIA (FASE 4)
+    // ================================
+    
+    // Armaduras Bronze (Caminho Tecnológico)
+    public static final Supplier<Item> BRONZE_HELMET = ITEMS.register("bronze_helmet",
+        () -> new BronzeArmorItem(ModArmorMaterials.BRONZE, ArmorItem.Type.HELMET, new Item.Properties()));
+    
+    public static final Supplier<Item> BRONZE_CHESTPLATE = ITEMS.register("bronze_chestplate",
+        () -> new BronzeArmorItem(ModArmorMaterials.BRONZE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    
+    public static final Supplier<Item> BRONZE_LEGGINGS = ITEMS.register("bronze_leggings",
+        () -> new BronzeArmorItem(ModArmorMaterials.BRONZE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    
+    public static final Supplier<Item> BRONZE_BOOTS = ITEMS.register("bronze_boots",
+        () -> new BronzeArmorItem(ModArmorMaterials.BRONZE, ArmorItem.Type.BOOTS, new Item.Properties()));
+    
+    // Armaduras Salgueiro Torcido (Caminho Mágico)
+    public static final Supplier<Item> TWISTED_WILLOW_HELMET = ITEMS.register("twisted_willow_helmet",
+        () -> new TwistedWillowArmorItem(ModArmorMaterials.TWISTED_WILLOW, ArmorItem.Type.HELMET, new Item.Properties()));
+    
+    public static final Supplier<Item> TWISTED_WILLOW_CHESTPLATE = ITEMS.register("twisted_willow_chestplate",
+        () -> new TwistedWillowArmorItem(ModArmorMaterials.TWISTED_WILLOW, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    
+    public static final Supplier<Item> TWISTED_WILLOW_LEGGINGS = ITEMS.register("twisted_willow_leggings",
+        () -> new TwistedWillowArmorItem(ModArmorMaterials.TWISTED_WILLOW, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    
+    public static final Supplier<Item> TWISTED_WILLOW_BOOTS = ITEMS.register("twisted_willow_boots",
+        () -> new TwistedWillowArmorItem(ModArmorMaterials.TWISTED_WILLOW, ArmorItem.Type.BOOTS, new Item.Properties()));
     
     // ================================
     // LIVROS E GUIAS

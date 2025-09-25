@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.util.valueproviders.UniformInt;
 import com.cronicasaetherium.mod.blocks.synergy.ManaInfuserBlock;
 import com.cronicasaetherium.mod.blocks.synergy.ArcanePortalBlock;
+import com.cronicasaetherium.mod.blocks.synergy.SpiritCentrifugeBlock;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -634,6 +635,20 @@ public class ModBlocks {
             .sound(SoundType.METAL)
             .lightLevel(state -> 6)
             .emissiveRendering((state, level, pos) -> true)));
+
+    /**
+     * Centrífuga Espiritual - Máquina de processamento mágico automatizado
+     * Consome FE para separar Bolsas de Espírito em tipos específicos
+     * Exemplo da sinergia tech-magic: tecnologia processando elementos mágicos
+     */
+    public static final Supplier<Block> SPIRIT_CENTRIFUGE = BLOCKS.register("spirit_centrifuge",
+        () -> new SpiritCentrifugeBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+            .requiresCorrectToolForDrops()
+            .strength(4.0f, 5.0f)
+            .sound(SoundType.METAL)
+            .lightLevel(state -> 4)));
     
     /**
      * Portal Arcano Ativo - Bloco de teleportação para o Crisol Arcano
@@ -811,6 +826,9 @@ public class ModBlocks {
     // BlockItems para blocos de sinergia
     public static final Supplier<Item> MANA_INFUSER_ITEM = ModItems.ITEMS.register("mana_infuser",
         () -> new BlockItem(MANA_INFUSER.get(), new Item.Properties()));
+    
+    public static final Supplier<Item> SPIRIT_CENTRIFUGE_ITEM = ModItems.ITEMS.register("spirit_centrifuge",
+        () -> new BlockItem(SPIRIT_CENTRIFUGE.get(), new Item.Properties()));
     
     // Portal arcano não precisa de BlockItem (criado dinamicamente)
     

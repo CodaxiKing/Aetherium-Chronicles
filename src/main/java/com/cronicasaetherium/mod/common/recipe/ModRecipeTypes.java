@@ -3,6 +3,7 @@ package com.cronicasaetherium.mod.common.recipe;
 import com.cronicasaetherium.mod.CronicasAetherium;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -29,6 +30,10 @@ public class ModRecipeTypes {
     // DeferredRegister para registro eficiente de RecipeTypes
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = 
         DeferredRegister.create(Registries.RECIPE_TYPE, CronicasAetherium.MODID);
+    
+    // DeferredRegister para serializers de receitas
+    public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = 
+        DeferredRegister.create(Registries.RECIPE_SERIALIZER, CronicasAetherium.MODID);
     
     /**
      * Tipo de receita para o Triturador Mecânico
@@ -71,6 +76,19 @@ public class ModRecipeTypes {
             RecipeType.simple(CronicasAetherium.id("crystal_processing")));
     
     /**
+     * Tipo de receita para Transmutação Rúnica
+     * Define como a Pedra Rúnica converte itens usando Essência Espiritual
+     */
+    public static final Supplier<RecipeType<RunicTransmutationRecipe>> RUNIC_TRANSMUTATION = 
+        RECIPE_TYPES.register("runic_transmutation", () -> 
+            RecipeType.simple(CronicasAetherium.id("runic_transmutation")));
+
+    // Serializers para as receitas
+    public static final Supplier<RecipeSerializer<RunicTransmutationRecipe>> RUNIC_TRANSMUTATION_SERIALIZER = 
+        RECIPE_SERIALIZERS.register("runic_transmutation", 
+            () -> new RunicTransmutationRecipe.Serializer());
+
+    /**
      * Método de registro que deve ser chamado na inicialização do mod
      * Registra o DeferredRegister no event bus do mod
      * 
@@ -78,5 +96,6 @@ public class ModRecipeTypes {
      */
     public static void register(IEventBus modEventBus) {
         RECIPE_TYPES.register(modEventBus);
+        RECIPE_SERIALIZERS.register(modEventBus);
     }
 }
