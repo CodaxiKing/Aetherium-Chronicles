@@ -1,0 +1,184 @@
+Título do Projeto: Mod para Minecraft - "Crônicas de Aetherium" (ou seu nome preferido) para a versão 1.21.1
+
+Visão Geral do Projeto:
+
+Desenvolva um mod abrangente para a versão 1.21.1 do Minecraft, utilizando o NeoForge. O mod será inspirado na natureza expansiva do "OreSpawn", enquanto integra sistemas modernos e profundos de outros mods populares. Ele será construído em torno de três pilares centrais: criaturas e exploração desafiadoras, automação tecnológica complexa e um sistema de magia rico e multifacetado.
+
+1. Sistema Principal: Mobs, Chefes e Estruturas (Inspirado no OreSpawn)
+
+Mobs:
+
+Projete e implemente mais de 20 mobs únicos com comportamentos variados (hostil, neutro, passivo).
+
+Os mobs devem ter modelos, texturas e efeitos sonoros personalizados.
+
+O spawn deve ser específico de cada bioma para incentivar a exploração.
+
+Exemplos:
+
+Um herbívoro gigante e gentil que vagueia pelas planícies e dropa couro valioso.
+
+Uma criatura insetoide rápida, que ataca em enxames dentro de cavernas.
+
+Uma criatura sombria e astuta que se teleporta e persegue jogadores no escuro.
+
+Chefes (Bosses):
+
+Crie pelo menos 3 batalhas de chefes com múltiplos estágios.
+
+Cada chefe deve ter uma mecânica de invocação única (ex: criar um altar, encontrar um local específico).
+
+Os chefes devem apresentar padrões de ataque complexos, vida elevada e ser um desafio significativo.
+
+Ao serem derrotados, devem dropar itens únicos e poderosos, essenciais para a progressão nos outros sistemas (tecnologia e magia).
+
+Estruturas:
+
+Gere estruturas grandes e procedimentais pelo mundo (Superfície, Nether e End).
+
+Essas estruturas devem estar repletas de mobs personalizados, armadilhas e baús de tesouro escondidos.
+
+Exemplos:
+
+Vastas ruínas anãs subterrâneas, cheias de defesas automatizadas.
+
+Ilhas flutuantes sustentadas por cristais mágicos misteriosos.
+
+Uma fortaleza corrompida no Nether, lar de um chefe poderoso.
+
+2. Sistema Principal: Tecnologia e Automação (Inspirado em Create, Applied Energistics 2, Mekanism)
+
+Energia Cinética e Mecânica (estilo Create):
+
+Implemente um sistema de energia rotacional com componentes como rodas d'água, moinhos de vento e caixas de engrenagens.
+
+Crie máquinas multi-bloco que realizam ações físicas: trituradores para duplicar minérios, braços mecânicos para transporte de itens e montadores automáticos para crafting.
+
+Foque em maquinário visual e dinâmico. Os itens devem ser visivelmente transportados em esteiras e processados por partes móveis.
+
+Armazenamento Digital e Autocrafting (estilo AE2):
+
+Desenvolva um sistema de rede de armazenamento digital.
+
+Os jogadores devem poder construir um "núcleo" central e expandi-lo com unidades de armazenamento que guardam itens digitalmente.
+
+Implemente terminais para acessar os itens e um sistema de autocrafting que pode aprender receitas para criar itens complexos sob demanda.
+
+Energia Avançada e Processamento (estilo Mekanism):
+
+Introduza um sistema de energia (ex: "Flux" ou uma unidade customizada).
+
+Crie máquinas para processamento avançado de minérios (ex: proporção de 3 para 1 ou 4 para 1 de minério para lingote).
+
+Inclua métodos de geração de energia como painéis solares, turbinas eólicas e um reator de fissão ou fusão de alto nível.
+
+Desenvolva cabos universais para transferir energia, itens e fluidos.
+
+3. Sistema Principal: Magia e Misticismo (Inspirado em Botania, Ice and Fire, Relics, Ars Nouveau)
+
+Magia Baseada na Natureza (estilo Botania):
+
+Crie um sistema que usa recursos naturais (flores, plantas) para gerar energia mágica ("Mana").
+
+Essa Mana deve ser usada para alimentar uma variedade de blocos e itens funcionais, como lentes mágicas, solo encantado para crescimento mais rápido e dispositivos que interagem com o mundo.
+
+A progressão deve ser guiada por um livro dentro do jogo.
+
+Criaturas Míticas e Elementos (estilo Ice and Fire):
+
+Introduza pelo menos dois tipos de criaturas míticas, como dragões ou ciclopes, que podem ser encontrados, combatidos e potencialmente domados ou abatidos para obter materiais raros.
+
+Esses materiais devem ser usados para criar armas e armaduras temáticas e poderosas (ex: espadas que cospem fogo, armaduras resistentes a gelo).
+
+Artefatos Poderosos (estilo Relics):
+
+Crie um conjunto de "Relíquias" raras e não fabricáveis, que podem ser encontradas como tesouros nas novas estruturas.
+
+Esses itens devem conceder habilidades passivas ou ativas únicas quando segurados ou equipados (ex: um amuleto que previne dano de queda).
+
+Feitiços Customizáveis (estilo Ars Nouveau):
+
+Implemente um sistema de criação de feitiços onde os jogadores podem combinar componentes como "Projétil", "Toque", "Em Si Mesmo", com efeitos como "Dano", "Cura", "Lançar", e modificadores como "Área de Efeito" ou "Duração".
+
+Os feitiços serão lançados usando um livro de feitiços e consumirão Mana.
+
+4. Documentação do Projeto e Instruções de Configuração
+
+Crie um arquivo README.md na raiz do projeto.
+
+Este arquivo deve conter instruções claras, passo a passo, para que outro desenvolvedor possa configurar o ambiente do projeto usando o IntelliJ IDEA.
+
+Inclua as seguintes seções no README.md:
+
+Instruções de Configuração do Ambiente no IntelliJ IDEA
+Este guia irá orientá-lo na configuração do ambiente de desenvolvimento para o projeto [Nome do Seu Mod].
+
+1. Pré-requisitos:
+
+Java Development Kit (JDK): Certifique-se de ter a versão correta do JDK instalada. Para o Minecraft 1.21.1, é necessário o JDK 21. Você pode baixá-lo no site da Oracle ou Adoptium.
+
+IntelliJ IDEA: Baixe e instale a versão mais recente do IntelliJ IDEA Community ou Ultimate do site da JetBrains.
+
+Git: Garanta que o Git esteja instalado no seu sistema.
+
+2. Clonando o Projeto:
+
+Abra seu terminal ou Git Bash.
+
+Navegue até o diretório onde deseja salvar o projeto.
+
+Clone o repositório com o comando: git clone [url_do_repositorio]
+
+3. Importando para o IntelliJ:
+
+Inicie o IntelliJ IDEA.
+
+Na tela de boas-vindas, selecione "Open".
+
+Navegue até o arquivo build.gradle do projeto e selecione-o.
+
+Uma janela irá aparecer. Escolha "Open as Project".
+
+O IntelliJ começará a importar o projeto e baixar as dependências via Gradle. Isso pode levar alguns minutos.
+
+4. Configurando o Workspace:
+
+Após a importação inicial, abra a janela de ferramentas do Gradle no lado direito do IntelliJ (View -> Tool Windows -> Gradle).
+
+Navegue até [Nome do Projeto] -> Tasks -> neogradle runs.
+
+Execute a tarefa genIntellijRuns com um duplo clique. Isso irá gerar as configurações de execução (Run Configurations) para iniciar o cliente e o servidor do Minecraft de dentro do IntelliJ.
+
+Após a conclusão, clique no botão de recarregar no painel do Gradle para atualizar o projeto.
+
+5. Executando e Testando o Mod:
+
+No canto superior direito da janela do IntelliJ, você verá um menu para as configurações de execução.
+
+Selecione runClient neste menu.
+
+Clique no botão verde de "Play" ao lado para iniciar o cliente do Minecraft com seu mod já carregado para testes.
+
+6. Compilando o Arquivo .jar do Mod:
+
+Para gerar o arquivo .jar distribuível do mod, abra o painel do Gradle.
+
+Navegue até [Nome do Projeto] -> Tasks -> build.
+
+Execute a tarefa build com um duplo clique.
+
+O arquivo .jar compilado estará localizado no diretório build/libs/. O arquivo sem -sources ou -javadoc no nome é o que deve ser distribuído.
+
+Diretrizes de Desenvolvimento:
+
+Versão e Framework: O mod deve ser desenvolvido para Minecraft 1.21.1 usando o mod loader NeoForge.
+
+Comentários no Código (em Português): Este é um requisito crucial. Adicione comentários generosamente por todo o código em português. Explique o propósito de cada pacote, classe e método complexo. Esclareça o que linhas ou blocos de código específicos devem fazer. O objetivo é que outro desenvolvedor possa entender facilmente a estrutura e a funcionalidade do projeto apenas lendo o código e seus comentários.
+
+Integração: Os três sistemas principais devem estar interconectados. Por exemplo, materiais raros de chefes podem ser necessários para máquinas de alto nível.
+
+Balanceamento: Garanta uma progressão equilibrada. Os jogadores devem ser incentivados a interagir com todos os três sistemas.
+
+Documentação Interna: Forneça um guia no jogo (como um livro craftável) para explicar as mecânicas do mod ao jogador.
+
+Performance: Mantenha a performance em mente. Otimize modelos, texturas e o código para garantir que o mod funcione de forma fluida.
